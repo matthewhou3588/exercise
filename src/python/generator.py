@@ -14,3 +14,15 @@ for n in fib(6):
 gener = (x**2 for x in range(5))
 for r in gener:
     print(r)
+    
+#
+# every word's start index in string
+def index_words_iter(text):
+    if text:
+        yield 0
+    for index, letter in enumerate(text):
+        if letter == ' ':
+            yield index + 1
+
+result = list(index_words_iter('Four score ad server years ago...'))
+print(result)
